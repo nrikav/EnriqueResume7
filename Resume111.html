@@ -1,0 +1,501 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Honor Society Resume – Enrique A Valencia</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <style>
+    :root {
+      --royal-blue: #003b73;
+      --gold: #cfae47;
+      --light-bg: #f5f7fb;
+      --dark-text: #1b1b1f;
+    }
+
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: system-ui, -apple-system, BlinkMacSystemFont, "Segoe UI", sans-serif;
+    }
+
+    body {
+      background: radial-gradient(circle at top, #ffffff 0, #e3e7f2 40%, #cfd6ea 100%);
+      color: var(--dark-text);
+      padding: 40px 16px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .resume-wrapper {
+      max-width: 1100px;
+      width: 100%;
+      background: #ffffff;
+      border-radius: 18px;
+      box-shadow: 0 18px 40px rgba(0, 0, 0, 0.12);
+      overflow: hidden;
+      border: 1px solid rgba(0, 0, 0, 0.06);
+      display: grid;
+      grid-template-columns: 320px 1fr;
+    }
+
+    /* Left column */
+    .sidebar {
+      background: linear-gradient(180deg, var(--royal-blue), #02152f);
+      color: #ffffff;
+      padding: 32px 28px;
+      display: flex;
+      flex-direction: column;
+      gap: 24px;
+    }
+
+    .brand-badge {
+      display: flex;
+      align-items: center;
+      gap: 14px;
+      margin-bottom: 10px;
+    }
+
+    .crest {
+      width: 52px;
+      height: 52px;
+      border-radius: 50%;
+      border: 2px solid var(--gold);
+      display: flex;
+      align-items: center;
+      justify-content: center;
+      font-size: 26px;
+      font-weight: 700;
+      color: var(--gold);
+      background: rgba(0, 0, 0, 0.18);
+    }
+
+    .brand-text h1 {
+      font-size: 18px;
+      letter-spacing: 0.08em;
+      text-transform: uppercase;
+    }
+
+    .brand-text p {
+      font-size: 12px;
+      opacity: 0.8;
+    }
+
+    .name-block {
+      margin-top: 10px;
+    }
+
+    .name-block h2 {
+      font-size: 26px;
+      letter-spacing: 0.06em;
+      text-transform: uppercase;
+    }
+
+    .name-block h3 {
+      font-size: 13px;
+      text-transform: uppercase;
+      color: var(--gold);
+      margin-top: 4px;
+      letter-spacing: 0.18em;
+    }
+
+    .divider {
+      height: 1px;
+      background: linear-gradient(90deg, rgba(255, 255, 255, 0.1), rgba(207, 174, 71, 0.9), rgba(255, 255, 255, 0.1));
+      margin: 18px 0;
+    }
+
+    .sidebar-section-title {
+      font-size: 12px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--gold);
+      margin-bottom: 8px;
+    }
+
+    .contact-list,
+    .honors-list,
+    .skills-list {
+      list-style: none;
+      display: flex;
+      flex-direction: column;
+      gap: 6px;
+      font-size: 13px;
+    }
+
+    .contact-label {
+      font-weight: 600;
+      color: var(--gold);
+    }
+
+    .tagline {
+      font-size: 13px;
+      line-height: 1.5;
+      opacity: 0.9;
+    }
+
+    .pill {
+      display: inline-block;
+      border-radius: 999px;
+      border: 1px solid rgba(255, 255, 255, 0.25);
+      padding: 4px 10px;
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      margin-top: 10px;
+      color: var(--gold);
+    }
+
+    /* Right column */
+    .main {
+      padding: 32px 34px;
+      background: var(--light-bg);
+      display: flex;
+      flex-direction: column;
+      gap: 26px;
+    }
+
+    .section {
+      background: #ffffff;
+      border-radius: 14px;
+      padding: 18px 20px;
+      border: 1px solid rgba(0, 0, 0, 0.04);
+    }
+
+    .section-header {
+      display: flex;
+      align-items: baseline;
+      justify-content: space-between;
+      margin-bottom: 10px;
+    }
+
+    .section-title {
+      font-size: 14px;
+      text-transform: uppercase;
+      letter-spacing: 0.18em;
+      color: var(--royal-blue);
+    }
+
+    .section-subtitle {
+      font-size: 11px;
+      text-transform: uppercase;
+      letter-spacing: 0.16em;
+      color: var(--gold);
+    }
+
+    .section-body {
+      font-size: 14px;
+      line-height: 1.6;
+      color: #33353b;
+    }
+
+    .two-column {
+      display: grid;
+      grid-template-columns: minmax(0, 1.1fr) minmax(0, 1fr);
+      gap: 18px;
+      margin-top: 8px;
+    }
+
+    .item {
+      margin-bottom: 10px;
+    }
+
+    .item-title {
+      font-weight: 600;
+      color: var(--royal-blue);
+      font-size: 14px;
+    }
+
+    .item-meta {
+      font-size: 12px;
+      color: #666a75;
+      margin-bottom: 4px;
+    }
+
+    .item-bullets {
+      margin-left: 16px;
+      font-size: 13px;
+      color: #3b3f4a;
+    }
+
+    .item-bullets li {
+      margin-bottom: 4px;
+    }
+
+    .badge-row {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 8px;
+      margin-top: 6px;
+    }
+
+    .badge {
+      font-size: 11px;
+      padding: 4px 10px;
+      border-radius: 999px;
+      border: 1px solid rgba(0, 0, 0, 0.08);
+      background: #f5f7fb;
+      color: #33353b;
+    }
+
+    .badge.gold {
+      border-color: var(--gold);
+      color: var(--royal-blue);
+      background: #fff9e6;
+    }
+
+    .footer-note {
+      font-size: 11px;
+      text-align: right;
+      color: #7b7f8a;
+      margin-top: 4px;
+    }
+
+    @media (max-width: 900px) {
+      .resume-wrapper {
+        grid-template-columns: 1fr;
+      }
+      .sidebar {
+        border-bottom: 1px solid rgba(255, 255, 255, 0.2);
+      }
+    }
+
+    @media (max-width: 600px) {
+      body {
+        padding: 20px 10px;
+      }
+      .main {
+        padding: 22px 18px;
+      }
+      .two-column {
+        grid-template-columns: 1fr;
+      }
+    }
+  </style>
+</head>
+<body>
+  <div class="resume-wrapper">
+    <!-- LEFT: Honor Society Sidebar -->
+    <aside class="sidebar">
+      <div class="brand-badge">
+        <div class="crest">Φ</div>
+        <div class="brand-text">
+          <h1>Honor Society Profile</h1>
+          <p>Academic excellence • Leadership • Service</p>
+        </div>
+      </div>
+
+      <div class="name-block">
+        <h2>Enrique A. Valencia</h2>
+        <h3>Honor Society Scholar</h3>
+      </div>
+
+      <div class="divider"></div>
+
+      <section>
+        <h4 class="sidebar-section-title">Contact</h4>
+        <ul class="contact-list">
+          <li><span class="contact-label">Email:</span> nrik.a.valencia@gmail.com </li>
+          <li><span class="contact-label">Phone:</span> (509)450-3019</li>
+          <li><span class="contact-label">Location:</span> Salem, Oregon</li>
+          <li><span class="contact-label">Portfolio:</span> dot.cards/nrik77</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4 class="sidebar-section-title">Honor society highlights</h4>
+        <ul class="honors-list">
+          <li>Inducted into Phi Theta Kappa International Honor Society</li>
+          <li>Recognized for high academic achievement and leadership potential</li>
+          <li>Active participant in advocacy and student success initiatives</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4 class="sidebar-section-title">Core strengths</h4>
+        <ul class="skills-list">
+          <li>Strategic thinking & systems design</li>
+          <li>Community-focused leadership</li>
+          <li>Service-oriented project management</li>
+          <li>Collaborative problem solving</li>
+        </ul>
+      </section>
+
+      <section>
+        <h4 class="sidebar-section-title">Profile</h4>
+        <p class="tagline">
+          Purpose-driven scholar committed to combining academic excellence with real-world impact—bridging
+          education, community service, and innovation.
+        </p>
+        <span class="pill">Scholar • Leader • Servant</span>
+      </section>
+    </aside>
+
+    <!-- RIGHT: Main Resume Content -->
+    <main class="main">
+      <!-- About / Summary -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Academic & professional summary</h2>
+          <span class="section-subtitle">Honor society aligned</span>
+        </div>
+        <div class="section-body">
+          <p>
+            High-achieving student and emerging professional whose work reflects the core values of
+            honor societies: scholarship, leadership, service, and fellowship. With experience in logistics,
+            construction, and community-focused initiatives, designs solutions that are both technical and
+            human-centered. His goal is to build scalable, ethical systems that uplift communities while maintaining
+            rigorous standards of excellence.
+          </p>
+        </div>
+      </section>
+
+      <!-- Education & Honors -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Education & honors</h2>
+          <span class="section-subtitle">Scholarship</span>
+        </div>
+        <div class="section-body two-column">
+          <div>
+            <div class="item">
+              <div class="item-title">Airstreams Renewables</div>
+              <div class="item-meta">Certificate • 2024</div>
+              <ul class="item-bullets">
+                <li>Completed technical training with emphasis on safety, reliability, and industry standards.</li>
+                <li>Developed strong foundation in hands-on trades and renewable-focused systems.</li>
+              </ul>
+            </div>
+
+            <div class="item">
+              <div class="item-title">Community College Studies</div>
+              <div class="item-meta">Phi Theta Kappa–eligible coursework</div>
+              <ul class="item-bullets">
+                <li>Maintained high academic performance across general education and specialized courses.</li>
+                <li>Engaged in advocacy and student success resources to support peers.</li>
+              </ul>
+            </div>
+          </div>
+
+          <div>
+            <div class="item">
+              <div class="item-title">Honor & recognition</div>
+              <div class="item-meta">International College Honor Society</div>
+              <ul class="item-bullets">
+                <li>Inducted into Phi Theta Kappa (PTK) for academic excellence and leadership potential.</li>
+                <li>Participated in PTK programming focused on advocacy, informed citizenship, and service.</li>
+                <li>Committed to upholding PTK’s four hallmarks: Scholarship, Leadership, Service, and Fellowship.</li>
+              </ul>
+            </div>
+            <div class="badge-row">
+              <span class="badge gold">Phi Theta Kappa Member</span>
+              <span class="badge">Advocacy Edge Participant</span>
+              <span class="badge">Academic Excellence</span>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Experience -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Professional experience</h2>
+          <span class="section-subtitle">Leadership & service</span>
+        </div>
+        <div class="section-body">
+          <div class="item">
+            <div class="item-title">Founder, EG Maintenance</div>
+            <div class="item-meta">Salem, Oregon • Landscaping, construction, and maintenance</div>
+            <ul class="item-bullets">
+              <li>Built a customer-centered maintenance and construction service with a focus on reliability and trust.</li>
+              <li>Designed scalable systems for scheduling, project tracking, and quality assurance.</li>
+              <li>Explored integration of nonprofit and community support models into business operations.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-title">Community & advocacy projects</div>
+            <div class="item-meta">Honor society–aligned initiatives</div>
+            <ul class="item-bullets">
+              <li>Developed emotional coaching tools for children, including autism-support resources and visual aids.</li>
+              <li>Engaged in informed citizenship by following reputable news sources and advocacy training.</li>
+              <li>Collaborated with peers and mentors to design systems that support student success and wellbeing.</li>
+            </ul>
+          </div>
+
+          <div class="badge-row">
+            <span class="badge gold">Service-Oriented Leadership</span>
+            <span class="badge">Systems & Process Design</span>
+            <span class="badge">Community Impact</span>
+          </div>
+        </div>
+      </section>
+
+      <!-- Skills -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Skills & competencies</h2>
+          <span class="section-subtitle">Hallmarks in practice</span>
+        </div>
+        <div class="section-body two-column">
+          <div>
+            <div class="item">
+              <div class="item-title">Technical & professional</div>
+              <ul class="item-bullets">
+                <li>Maintenance and construction trades</li>
+                <li>Project planning and scheduling</li>
+                <li>HTML & CSS web development (beginner–intermediate)</li>
+                <li>Digital content and tool design</li>
+              </ul>
+            </div>
+          </div>
+          <div>
+            <div class="item">
+              <div class="item-title">Honor society–aligned strengths</div>
+              <ul class="item-bullets">
+                <li>Scholarship: Continuous learning and skill development.</li>
+                <li>Leadership: Vision for scalable, ethical systems.</li>
+                <li>Service: Commitment to community and youth support.</li>
+                <li>Fellowship: Collaborative, inclusive approach to teamwork.</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+      </section>
+
+      <!-- Service & Projects -->
+      <section class="section">
+        <div class="section-header">
+          <h2 class="section-title">Service & projects</h2>
+          <span class="section-subtitle">Community impact</span>
+        </div>
+        <div class="section-body">
+          <div class="item">
+            <div class="item-title">Emotional coaching tools for children</div>
+            <div class="item-meta">DSP work • Autism support</div>
+            <ul class="item-bullets">
+              <li>Created visual tools (e.g., “Feelings Boat”) to help children identify and navigate emotions.</li>
+              <li>Integrated psychology-informed strategies to support regulation and communication.</li>
+              <li>Aligned resources with family and educator needs for practical, everyday use.</li>
+            </ul>
+          </div>
+
+          <div class="item">
+            <div class="item-title">AI-powered strategy canvas</div>
+            <div class="item-meta">Idea categorization & planning</div>
+            <ul class="item-bullets">
+              <li>Designed frameworks to organize ideas into pillars and actionable steps.</li>
+              <li>Explored AI integration to support decision-making and long-term planning.</li>
+              <li>Focused on clarity, scalability, and ethical use of technology.</li>
+            </ul>
+          </div>
+
+          <div class="footer-note">
+            Resume designed with honor society values at the center—ready for academic, professional, and leadership opportunities.
+          </div>
+        </div>
+      </section>
+    </main>
+  </div>
+</body>
+</html>
